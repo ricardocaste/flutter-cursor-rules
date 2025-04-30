@@ -11,7 +11,7 @@
 const flutterBestPractices = [
     "Adapt to existing project architecture while maintaining clean code principles",
     "Use Flutter 3.x features and Material 3 design",
-    "Implement clean architecture with BLoC pattern",
+    "Implement clean architecture with BLoC pattern, in particular with Cubit",
     "Follow proper state management principles",
     "Use proper dependency injection",
     "Implement proper error handling",
@@ -25,26 +25,31 @@ const flutterBestPractices = [
 
 const projectStructure = `
 lib/
-  core/
+  data/
+    datasources/
+    models/
+    providers/
+    repositories/
+    firebase_options.dart
+  domain/
+    entities/
+    repositories/
+    usecases/
+  infrastructure/
     constants/
-    theme/
-    utils/
+    di/
+    errir/
+    extensions/
+    network/
+    services/
+    usecases/
+    utils.dart
+  presentation/
+    bloc/
+    nav/
+    pages/
     widgets/
-  features/
-    feature_name/
-      data/
-        datasources/
-        models/
-        repositories/
-      domain/
-        entities/
-        repositories/
-        usecases/
-      presentation/
-        bloc/
-        pages/
-        widgets/
-  l10n/
+    themes.dart
   main.dart
 test/
   unit/
@@ -61,7 +66,7 @@ const codingGuidelines = `
 4. Use proper widget composition
 5. Implement proper routing using GoRouter
 6. Use proper form validation
-7. Follow proper state management with BLoC
+7. Follow proper state management with BLoC, in particular with Cubit
 8. Implement proper dependency injection using GetIt
 9. Use proper asset management
 10. Follow proper testing practices
